@@ -8,7 +8,7 @@
     "build": "yarn workspace example build"
   },
   "workspaces": [
-    "garoyeri-dev-theme",
+    "gatsby-garoyeri-dev-theme",
     "example"
   ]
 }

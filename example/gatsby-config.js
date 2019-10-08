@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [{ resolve: `garoyeri-dev-theme`, options: {} }],
+  plugins: [{ resolve: `gatsby-garoyeri-dev-theme`, options: {} }],
 }
