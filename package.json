@@ -9,6 +9,7 @@
   },
   "workspaces": [
     "gatsby-theme-minimal",
+    "garoyeri-dev-theme",
     "example"
   ]
 }
