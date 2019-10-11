@@ -5,10 +5,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace example build"
+    "build": "yarn workspace garoyeri-dev-site build"
   },
   "workspaces": [
     "gatsby-garoyeri-dev-theme",
-    "example"
+    "garoyeri-dev-site"
   ]
 }

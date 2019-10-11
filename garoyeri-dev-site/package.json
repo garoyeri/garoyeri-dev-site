@@ -1,7 +1,7 @@
 {
-  "name": "example",
+  "name": "garoyeri-dev-site",
   "version": "1.0.0",
-  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "author": "Garo Yeriazarian <garo.yeriazarian@gmail.com> (@garoyeri)",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
