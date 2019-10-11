@@ -8,7 +8,7 @@ export default merge(typography, {
   initialColorMode: `light`,
   colors,
   fonts: {
-    heading: `Montserrat, sans-serif`,
+    heading: `Domine, sans-serif`,
     monospace: `Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
   },
   sizes: {

@@ -34,9 +34,9 @@
     "react-helmet": "^5.2.1",
     "react-switch": "^5.0.1",
     "theme-ui": "^0.2.43",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typeface-domine": "^0.0.72",
+    "typeface-open-sans": "^0.0.75",
+    "typography-theme-alton": "^0.16.19"
   },
   "devDependencies": {
     "gatsby": "^2.15.29",

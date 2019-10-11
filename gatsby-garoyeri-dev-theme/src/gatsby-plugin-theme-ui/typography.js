@@ -1,6 +1,6 @@
-import "typeface-montserrat"
-import "typeface-merriweather"
+import "typeface-open-sans"
+import "typeface-domine"
 import { toTheme } from "@theme-ui/typography"
-import wordpress2016 from "typography-theme-wordpress-2016"
+import alton from "typography-theme-alton"
 
-export default toTheme(wordpress2016)
+export default toTheme(alton)
