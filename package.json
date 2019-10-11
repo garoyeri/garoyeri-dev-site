@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace garoyeri-dev-site build"
+    "build": "yarn workspace garoyeri-dev-site build",
+    "develop": "yarn workspace garoyeri-dev-site develop"
   },
   "workspaces": [
     "gatsby-garoyeri-dev-theme",
