@@ -2,8 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { css, Styled, Flex } from "theme-ui"
 
-import Bio from "../components/bio"
-
 const Footer = ({ previous, next }) => (
   <footer
     css={css({

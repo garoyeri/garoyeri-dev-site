@@ -1,10 +1,7 @@
 /** @jsx jsx */
-
-import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import { Styled, jsx, css, Flex } from "theme-ui"
-import BioContent from "./bio-content.js"
+import { jsx, css, Flex } from "theme-ui"
 
 const Bio = () => {
   const data = useStaticQuery(bioQuery)

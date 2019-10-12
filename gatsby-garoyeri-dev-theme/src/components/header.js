@@ -3,8 +3,6 @@ import { Link } from "gatsby"
 import { css, Styled, jsx } from "theme-ui"
 import Bio from "../components/bio"
 
-const rootPath = `${__PATH_PREFIX__}/`
-
 const Title = ({ children, location }) => {
   return (
     <Styled.h1
@@ -58,7 +56,6 @@ export default ({ children, title, ...props }) => {
           {children}
           <Bio />
         </div>
-        {/* {props.location.pathname === rootPath && <Bio />} */}
       </div>
     </header>
   )
