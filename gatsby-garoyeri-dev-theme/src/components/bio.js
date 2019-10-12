@@ -1,14 +1,9 @@
-/**
- * Bio component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
+/** @jsx jsx */
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import { Styled, css, Flex } from "theme-ui"
+import { Styled, jsx, css, Flex } from "theme-ui"
 import BioContent from "./bio-content.js"
 
 const Bio = () => {
@@ -21,7 +16,7 @@ const Bio = () => {
   } = data
 
   return (
-    <Flex css={css({ mb: 4 })}>
+    <Flex css={css({ mb: 0, alignItems: `center` })}>
       {avatar ? (
         <Image
           fixed={avatar.childImageSharp.fixed}
@@ -44,9 +39,13 @@ const Bio = () => {
           role="presentation"
         />
       )}
-      <Styled.div>
-        <BioContent />
-      </Styled.div>
+      <div sx={{
+        color: `white`
+      }}>
+        {author}
+        <br />
+        Software Whisperer
+      </div>
     </Flex>
   )
 }

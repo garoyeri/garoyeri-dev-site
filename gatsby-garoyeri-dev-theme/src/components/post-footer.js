@@ -12,7 +12,6 @@ const Footer = ({ previous, next }) => (
     })}
   >
     <Styled.hr />
-    <Bio />
     {(previous || next) && (
       <Flex
         as="ul"
