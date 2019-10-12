@@ -16,7 +16,7 @@ const Bio = () => {
   } = data
 
   return (
-    <Flex css={css({ mb: 0, alignItems: `center` })}>
+    <Flex css={css({ alignItems: `center` })}>
       {avatar ? (
         <Image
           fixed={avatar.childImageSharp.fixed}

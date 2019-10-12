@@ -33,8 +33,9 @@ export default ({ children, title, ...props }) => {
   return (
     <header
       sx={{
-        backgroundColor: "primary"
-      }}>
+        backgroundColor: "primary",
+      }}
+    >
       <div
         css={css({
           maxWidth: `container`,
@@ -48,6 +49,7 @@ export default ({ children, title, ...props }) => {
             display: `flex`,
             justifyContent: `space-between`,
             alignItems: `center`,
+            flexWrap: `wrap`,
             pb: 4,
             mb: 4,
           })}
