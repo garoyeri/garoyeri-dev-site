@@ -10,6 +10,7 @@
     "clean": "yarn workspace garoyeri-dev-site clean"
   },
   "workspaces": [
+    "gatsby-theme-blog-core",
     "gatsby-garoyeri-dev-theme",
     "garoyeri-dev-site"
   ]
