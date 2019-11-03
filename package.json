@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace garoyeri-dev-site build",
+    "serve": "yarn workspace garoyeri-dev-site serve",
     "develop": "yarn workspace garoyeri-dev-site develop",
     "clean": "yarn workspace garoyeri-dev-site clean"
   },
