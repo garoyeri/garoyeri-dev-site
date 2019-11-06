@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import { jsx, css, Flex } from "theme-ui"
 
@@ -13,7 +13,8 @@ const Bio = () => {
   } = data
 
   return (
-    <Flex css={css({ alignItems: `center` })}>
+    <Flex as={Link} css={css({ alignItems: `center`, textDecoration: `none` })}
+      to='/about'>
       {avatar ? (
         <Image
           fixed={avatar.childImageSharp.fixed}
