@@ -14,7 +14,11 @@ export const query = graphql`
         }
       }
     }
-    allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+    allBlogPost(
+      sort: { fields: [date, title], order: DESC }
+      limit: 1000
+      filter: { post_type: { eq: "post" } }
+    ) {
       edges {
         node {
           id

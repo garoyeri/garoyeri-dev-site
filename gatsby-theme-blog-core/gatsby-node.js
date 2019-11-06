@@ -55,6 +55,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       tags: [String]!
       keywords: [String]!
       excerpt: String!
+      post_type: String!
   }`)
 
   createTypes(
@@ -85,6 +86,9 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           type: `String!`,
           resolve: mdxResolverPassthrough(`body`),
         },
+        post_type: {
+          type: `String!`,
+        }
       },
       interfaces: [`Node`, `BlogPost`],
     })
@@ -137,6 +141,7 @@ exports.onCreateNode = async (
       slug,
       date: node.frontmatter.date,
       keywords: node.frontmatter.keywords || [],
+      post_type: node.frontmatter.type,
     }
 
     const mdxBlogPostId = createNodeId(`${node.id} >>> MdxBlogPost`)
@@ -170,7 +175,28 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const result = await graphql(`
     {
-      allBlogPost(sort: { fields: [date, title], order: DESC }, limit: 1000) {
+      allBlogPost(
+        sort: { fields: [date, title], order: DESC }
+        limit: 1000
+        filter: { post_type: { eq: "post" } }
+      ) {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  const pageResult = await graphql(`
+    {
+      allBlogPost(
+        sort: { fields: [date, title], order: DESC }
+        limit: 1000
+        filter: { post_type: { eq: "page" } }
+      ) {
         edges {
           node {
             id
@@ -183,7 +209,10 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   if (result.errors) {
     reporter.panic(result.errors)
-  }
+  } 
+  if (pageResult.errors) {
+    reporter.panic(pageResult.errors)
+  } 
 
   // Create Posts and Post pages.
   const { allBlogPost } = result.data
@@ -205,10 +234,24 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     })
   })
 
-  // // Create the Posts page
+  // Create the Posts page
   createPage({
     path: basePath,
     component: PostsTemplate,
     context: {},
+  })
+
+  // Create Standalone Pages
+  pageResult.data.allBlogPost.edges.forEach(({ node: post }, index) => {
+    const { slug } = post
+    createPage({
+      path: slug,
+      component: PostTemplate,
+      context: {
+        id: post.id,
+        previousId: undefined,
+        nextId: undefined,
+      },
+    })
   })
 }

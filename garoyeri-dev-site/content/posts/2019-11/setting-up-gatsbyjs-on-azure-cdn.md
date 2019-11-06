@@ -1,5 +1,6 @@
 ---
 title: Gatsby JS on Azure CDN
+type: post
 date: 2019-11-02
 tags: ["gatsbyjs", "azure"]
 excerpt: |
