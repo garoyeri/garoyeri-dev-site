@@ -9,7 +9,11 @@ import Footer from "../components/home-footer"
 const Posts = ({ location, posts, siteTitle, socialLinks }) => (
   <Layout location={location} title={siteTitle}>
     <main>
-      {posts.map(({ node }) => {
+      {posts
+        .filter(({ node }) => {
+          return new Date(node.date) <= new Date()
+        })
+        .map(({ node }) => {
         const title = node.title || node.slug
         const keywords = node.keywords || []
         return (
