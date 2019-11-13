@@ -2,6 +2,7 @@
 title: Upgrading the .NET Core 3.0 React SPA Template to Celery Architecture
 type: post
 date: 2019-11-12
+tags: ["dotnet", "series-directory"]
 excerpt: |
   In this episode, I take the template from last time and apply a "feature slice" strategy to 
   the C# side of the pool, demonstrating a simple use of MediatR. I also dip my toe into the
@@ -9,7 +10,7 @@ excerpt: |
   scalable organizational strategy to your applications, this is a good place to start.
 ---
 
-Previous Post in Series: (post link)
+Previous Post in Series: [Getting Started with .NET Core 3.0 and React SPA Template](/2019-11/dotnet-new-react-app-getting-started/)
 
 Last time, we upgraded the React part of the template to use the newest patterns and React scripts. This time, we'll upgrade the C# side and prepare the Celery Architecture so we can build up services quickly.
 
