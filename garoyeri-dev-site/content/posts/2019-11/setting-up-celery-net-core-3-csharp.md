@@ -77,7 +77,7 @@ We can easily fix two measly warnings. If we did this on a mature codebase, we w
 
 In `Error.cshtml.cs`, we received a warning that `RequestId` is not initialized in the constructor and could be null. Seeing that we have a guard condition on the `ShowRequestId` property, I'm sure we intended this to happen.
 
-```c#
+```csharp
 public string RequestId { get; set; }
 public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 ```
@@ -86,7 +86,7 @@ To resolve it, we change the type of `RequestId` from `string` to `string?`. Thi
 
 The next issue is a little more vague:
 
-```c#
+```csharp
 public class WeatherForecast
 {
     public DateTime Date { get; set; }
@@ -145,14 +145,14 @@ Open `Startup.cs` so we can configure these two libraries.
 
 At the top of the file, add the following `using` statements:
 
-```c#
+```csharp
 using AutoMapper;
 using MediatR;
 ```
 
 Then at the end of the `ConfigureServices` method, add the following statements:
 
-```c#
+```csharp
 services.AddMediatR(typeof(Startup).Assembly);
 services.AddAutoMapper(typeof(Startup).Assembly);
 ```
@@ -169,7 +169,7 @@ There's a clean way to organize your Features into single files using a static c
 
 We'll modify `WeatherForecast.cs` to become our feature slice.
 
-```c#
+```csharp
 namespace Directory.Features.Weather
 {
     using System;
@@ -232,7 +232,7 @@ This construct lets us refer to the query as `WeatherForecast.Query` and the res
 
 The `WeatherForecastController` can now be simplified:
 
-```c#
+```csharp
 namespace Directory.Features.Weather
 {
     using System.Collections.Generic;
@@ -274,7 +274,7 @@ In the feature slices, the query or command and the handler will take on a commo
 
 ## Today I Learned
 
-C# code formatting outside of Visual Studio and Resharper is challenging. I thought for sure that Prettier+EditorConfig would solve all my issues, but it seems they all only support a subset. Even OmniSharp (the C# plugin for VSCode) doesn't support all the settings (or won't resolve them). When I figure it out, I'll make a post about it for sure.
+C# code formatting outside of Visual Studio and Resharper is challenging. I thought for sure that Prettier+EditorConfig would solve all my issues, but it seems they all only support a subset. Even OmniSharp (the C# plugin for VSCode) doesn't support all the settings (or won't resolve them). When I figure it out, I'll make a post about it for sure. I also realized I didn't actually dig into Prettier just yet, but I WILL for the JavaScript side of the pool.
 
 Nullable Reference Types in C# are a great defensive mechanism and while I haven't used them much yet, I have a feeling I'm going to appreciate them going forward. I am mostly looking forward to getting rid of all the null checks and uses of the "Elvis" operator (as much as I like it).
 
