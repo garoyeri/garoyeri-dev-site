@@ -1,9 +1,10 @@
 ---
 title: Getting Started with .NET Core 3.0 and React SPA Template
+type: post
 date: 2019-11-11
 tags: ["dotnet", "react", "azure"]
 excerpt: |
-	.NET Core 3.0 is out and it's chock full of new features to get your application off the ground faster. I'm working on a greenfield application for managing a small church. As I work through these, I'll talk through the development process, the settings, take screen shots and point out any salient code snippets. I'm using this as my vehicle for learning more of the new ins and outs of .NET Core 3.0 and React 16.8+, along with demonstrating ways to manage infrastructure as code and deploy everything in Azure. All the code will be kept open (forcing me to make sure I don't commit anything dumb like passwords or my credit card number). This post starts from the basic template and makes some initial improvements and upgrades to be more productive.
+    .NET Core 3.0 is out and it's chock full of new features to get your application off the ground faster. I'm working on a greenfield application for managing a small church. As I work through these, I'll talk through the development process, the settings, take screen shots and point out any salient code snippets. I'm using this as my vehicle for learning more of the new ins and outs of .NET Core 3.0 and React 16.8+, along with demonstrating ways to manage infrastructure as code and deploy everything in Azure. All the code will be kept open (forcing me to make sure I don't commit anything dumb like passwords or my credit card number). This post starts from the basic template and makes some initial improvements and upgrades to be more productive.
 ---
 
 .NET Core 3.0 is out and it's chock full of new features to get your application off the ground faster. I'm working on a greenfield application for managing a small church that:
