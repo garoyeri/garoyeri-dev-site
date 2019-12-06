@@ -2,6 +2,10 @@
 import { jsx } from "theme-ui"
 import { preToCodeBlock } from "mdx-utils"
 import PrismCodeBlock from "@theme-ui/prism"
+import PrismCore from "prismjs/components/prism-core"
+import "prismjs/components/prism-clike"
+import "prismjs/components/prism-csharp"
+import "prismjs/components/prism-powershell"
 
 import headings from "../components/headings"
 
@@ -13,7 +17,7 @@ const CodeBlock = preProps => {
 
     return (
       <div sx={{ mb: 2 }}>
-        <PrismCodeBlock {...restProps}>{codeString}</PrismCodeBlock>
+        <PrismCodeBlock {...restProps} Prism={PrismCore}>{codeString}</PrismCodeBlock>
       </div>
     )
   } else {
