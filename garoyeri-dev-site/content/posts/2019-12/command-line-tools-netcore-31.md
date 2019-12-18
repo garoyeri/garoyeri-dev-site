@@ -214,3 +214,5 @@ Vertical Slice Architecture can be applied to things as simple as a command line
 I didn't get around to implementing unit tests in this sample, but I can see that it would not be different from the usual approach in testing web applications. We would create the generic host, but instead of running it, we use its service provider with our unit tests. A big area of concern though would be to create scopes in the dependency injection container for each unit test and ensure that the services are setup to work in those conditions.
 
 You can see all the source code for this sample in GitHub: https://github.com/garoyeri/sample-console-app-net-core-01. Please reach out if you have any questions, comments, queries or concerns.
+
+This blog post was part of [C# Advent 2019](https://crosscuttingconcerns.com/The-Third-Annual-csharp-Advent)! You can hop there to read a LOT of C# related articles from a LOT of talented people!
