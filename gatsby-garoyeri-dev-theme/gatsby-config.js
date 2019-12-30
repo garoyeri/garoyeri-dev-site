@@ -9,6 +9,12 @@ module.exports = options => {
       `gatsby-plugin-twitter`,
       `gatsby-plugin-emotion`,
       `gatsby-plugin-theme-ui`,
+      {
+        resolve: `gatsby-plugin-disqus`,
+        options: {
+          shortname: `garoyeri-dev`,
+        },
+      },
     ],
   }
 }
