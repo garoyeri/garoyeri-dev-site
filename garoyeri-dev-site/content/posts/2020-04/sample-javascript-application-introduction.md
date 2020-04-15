@@ -23,11 +23,11 @@ Install "Node JS" here: https://nodejs.org/en/ (except if you're using MacOS, re
 
 * Note: if you're running in Windows or Linux, the regular instructions will work fine, but for MacOS, follow the instructions here to install `nvm` which will install NodeJS for your current user properly.
 
-* ```sh
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-  nvm install --lts
-  nvm use --lts
-  ```
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install --lts
+nvm use --lts
+```
 
 Install "Visual Studio Code" here: https://code.visualstudio.com/. Go for the "Stable Build" for your computer. It won't ask too many questions and it'll install the basics of what you need.
 
