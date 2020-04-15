@@ -19,35 +19,55 @@ You can run this tutorial on any computer: Windows, Mac, or Linux. If you are on
 
 We're going to setup everything in JavaScript (or at least mostly) so you'll need to get the JavaScript tools (Node JS), a code editor (Visual Studio Code), and configure a few things. The goal here is to have enough to run the example and be able to make some changes.
 
-Install "Node JS" here: https://nodejs.org/en/. Follow the instructions online to install the "LTS" version onto your machine. When you go to that website, it should show you instructions that work for whatever computer you're using.
+Install "Node JS" here: https://nodejs.org/en/ (except if you're using MacOS, read below for better instructions). Follow the instructions online to install the "LTS" version onto your machine. When you go to that website, it should show you instructions that work for whatever computer you're using.
+
+* Note: if you're running in Windows or Linux, the regular instructions will work fine, but for MacOS, follow the instructions here to install `nvm` which will install NodeJS for your current user properly.
+
+* ```sh
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+  nvm install --lts
+  nvm use --lts
+  ```
 
 Install "Visual Studio Code" here: https://code.visualstudio.com/. Go for the "Stable Build" for your computer. It won't ask too many questions and it'll install the basics of what you need.
 
-Install "Git" from here: https://git-scm.com/. It will be used to pull down the code from online so you can try it out.
+Once you install Visual Studio Code, be sure to follow the "Getting Started" instructions here:
 
-Make sure you can access your computer Command Prompt (Windows) or Terminal (Mac / Linux / ChromeOS). A lot of commands will be run from there and you need to be sure it works.
+* Windows Users: when running setup, be sure to select "Run Visual Studio Code from the command line" to allow you to run it from anywhere by running: `code .`
+* Mac Users: https://code.visualstudio.com/docs/setup/mac
+* Linux / ChromeOS Users: (you shouldn't need to do anything else special)
+
+Install "Git" from here: https://git-scm.com/. It will be used to pull down the code from online so you can try it out. It will install properly on most / all operating systems.
 
 ## Create a Folder for your Project ##
 
-We need a place to put all the files on your computer. The best place to start is a folder in your "Documents" folder called "SampleApp". You can create the folder using the MacOS Finder, Windows Explorer, or ChromeOS File Manager.
+We're going to cheat a little bit and use Visual Studio Code to create a new folder and run our terminal. Launch Visual Studio Code in the usual manner of your operating system. You should see the startup screen:
 
-Next, you'll need to open a terminal into this folder.
+![image-20200414203142026](image-20200414203142026.png)
 
-Windows 10: https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/
+Click "Open folder..."
 
-![image-20200412180029121](image-20200412180029121.png)
+In the window that opens up, create a new folder called "SampleApp" in your "Documents" or "Desktop" folder, then select it to open it in Visual Studio Code.
 
-MacOS: https://www.howtogeek.com/210147/how-to-open-terminal-in-the-current-os-x-finder-location/
+Next, you'll need to open a terminal into this folder. Click on the "View" menu, then click "Terminal"
 
-ChromeOS: ? (I have no idea)
+![image-20200414203357966](image-20200414203357966.png)
 
-It helps to brush up on your terminal skills a little. You can find guides to getting started here:
+You'll see a Terminal pop up on the bottom half of the screen. You'll use this to type in commands from this guide.
 
-* Windows: https://www.youtube.com/watch?v=MBBWVgE0ewk
-* MacOS: https://www.imore.com/how-use-terminal-mac-when-you-have-no-idea-where-start
-* ChromeOS: https://www.aboutchromebooks.com/news/linux-for-chromebooks-101-getting-started-with-the-command-line/
+![image-20200414203459906](image-20200414203459906.png)
 
-You should execute all the "terminal" commands in this guide from the new folder you've created. This way, all the generates files will be in the right place and not collide with any of your other files and documents.
+To see if everything is working, try running this command:
+
+```sh
+npm -v
+```
+
+You should see a response like this (your version *might* differ, but not by much):
+
+![image-20200414203545100](image-20200414203545100.png)
+
+Now you're ready to do the next steps and setup Firebase.
 
 ## Setup Firebase ##
 
