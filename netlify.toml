@@ -1,5 +1,5 @@
 [[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+package = "netlify-plugin-gatsby-cache"
 
 [build]
   publish = "garoyeri-dev-site/public"
