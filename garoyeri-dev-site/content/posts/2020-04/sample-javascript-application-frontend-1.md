@@ -1,5 +1,5 @@
 ---
-title: Sample JavaScript Application Frontend Part 1
+title: Sample JavaScript Application Part 1 - Frontend
 type: post
 date: 2020-04-15
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]

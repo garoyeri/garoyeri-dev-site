@@ -1,5 +1,5 @@
 ---
-title: Sample JavaScript Application Frontend Part 2
+title: Sample JavaScript Application Part 2 - Data Modeling
 type: post
 date: 2020-04-19
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]
