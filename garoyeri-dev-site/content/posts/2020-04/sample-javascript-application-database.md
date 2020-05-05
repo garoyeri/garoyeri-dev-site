@@ -7,15 +7,15 @@ excerpt: |
   In the last segment, we discussed how we should do data modeling and arrived at a possible data model to use with the database. This segment, we'll walk through how to setup the database and connect your frontend to it to start saving data about the map.
 ---
 
-## Overview ##
+## Overview
 
 In the last segment, we discussed how we should do data modeling and arrived at a possible data model to use with the database. This segment, we'll walk through how to setup the database and connect your frontend to it to start saving data about the map.
 
-If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](sample-javascript-application-introduction).
+If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](/2020-04/sample-javascript-application-introduction).
 
-These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Frontend Part 2](sample-javascript-application-frontend-2). If you don't have that handy, you'll need to follow the instructions in the previous articles to get a project configured that points to your own Firebase project on Google Cloud.
+These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Frontend Part 2](/2020-04/sample-javascript-application-frontend-2). If you don't have that handy, you'll need to follow the instructions in the previous articles to get a project configured that points to your own Firebase project on Google Cloud.
 
-## Updating Firebase Tools ##
+## Updating Firebase Tools
 
 If you've been following along since the beginning for a few weeks now, your Firebase tools have probably gone out of date and you'll see a message like this asking you to upgrade:
 
@@ -39,22 +39,22 @@ You'll see the new version displayed (in my case, it was upgraded even further t
 8.2.0
 ```
 
-## Versioning ##
+## Versioning
 
 A quick word about version numbering. Most modern software tries to follow "semantic versioning". This strategy separates version numbers into four parts:
 
 MAJOR . MINOR . PATCH - SUFFIX
 
-* MAJOR: when this number changes, it is a "breaking" change, meaning that some things that used to work might not work anymore. Major changes could include architectural overhauls, removal of old functions or commands that are no longer supported, or changes to a file or configuration format. Take care when there is a MAJOR version change in a tool or library, it means that you should review the release notes on the website to see what exactly has changed, and if you need to perform any migration steps when upgrading. When the MAJOR version changes, it typically resets the other two numeric parts of the version to `0`. This change could also include MINOR or PATCH changes, but the MAJOR change is the most important concern for the consumer.
-* MINOR: when this number changes, it is a "feature" change, meaning that something new was added to the software without breaking any existing functionality. The release notes should indicate the new features. This change could also include PATCH changes, but there was enough of a new feature to require a MINOR change increment.
-* PATCH: when this number changes, it is a "bugfix" change, meaning that a defect in the software was resolved with no addition of functionality, and no breaking changes to the way the software is expected to run. This change is the most common and software will make frequent releases to address defects and incremening the PATCH version.
-* SUFFIX: this is the non-numeric part of the version, it is optional and can be used to designate special conditions on this version of the software. For example, if this is a bleeding edge build that hasn't been tested much, it might end in `-dev` or `-edge` to indicate it's nature. More tested builds that are ready for feedback could be `-beta` or `-testing`. Numbers can also be mixed in like: `-beta.3` to indicate that it is the third beta.
+- MAJOR: when this number changes, it is a "breaking" change, meaning that some things that used to work might not work anymore. Major changes could include architectural overhauls, removal of old functions or commands that are no longer supported, or changes to a file or configuration format. Take care when there is a MAJOR version change in a tool or library, it means that you should review the release notes on the website to see what exactly has changed, and if you need to perform any migration steps when upgrading. When the MAJOR version changes, it typically resets the other two numeric parts of the version to `0`. This change could also include MINOR or PATCH changes, but the MAJOR change is the most important concern for the consumer.
+- MINOR: when this number changes, it is a "feature" change, meaning that something new was added to the software without breaking any existing functionality. The release notes should indicate the new features. This change could also include PATCH changes, but there was enough of a new feature to require a MINOR change increment.
+- PATCH: when this number changes, it is a "bugfix" change, meaning that a defect in the software was resolved with no addition of functionality, and no breaking changes to the way the software is expected to run. This change is the most common and software will make frequent releases to address defects and incremening the PATCH version.
+- SUFFIX: this is the non-numeric part of the version, it is optional and can be used to designate special conditions on this version of the software. For example, if this is a bleeding edge build that hasn't been tested much, it might end in `-dev` or `-edge` to indicate it's nature. More tested builds that are ready for feedback could be `-beta` or `-testing`. Numbers can also be mixed in like: `-beta.3` to indicate that it is the third beta.
 
 Version numbers are flags to the consumers that something is different with this version and gives the developer some guidance on what sort of changes to expect. In my case, I upgraded from `firebase-tools-8.1.1` to `firebase-tools-8.2.0`. This was a MINOR version change, so I can expect some new features and maybe some bugfixes. Looking up the source code for `firebase-tools`, I see this: https://github.com/firebase/firebase-tools/releases. You can read up on the changes and see what might be useful (doesn't look like there was anything that affects us).
 
 Take a look around the code for the Sample Map Application you have, see if you can find version numbers for the libraries that we're using, then look up their websites to see if there is a newer version we should be using.
 
-## Creating the Database ##
+## Creating the Database
 
 Let's swing back around to the database! Before we can get started, we have to tell Google Cloud which datacenter to put our database. With the "hosting" feature, our HTML and JavaScript is distributed automatically all around the world, but for the data, we need to pick a location for it to live.
 
@@ -74,7 +74,7 @@ Let's swing back around to the database! Before we can get started, we have to t
 9. Once you see the empty database screen, you're done:
    ![image-20200429205159396](sample-javascript-application-database.assets/image-20200429205159396.png)
 
-## Setup the Database in the Project ##
+## Setup the Database in the Project
 
 Head back to your Visual Studio Code console, open your project folder from the previous segment, and then open the Terminal. (You can do it by clicking the "View" menu, then "Terminal").
 
@@ -98,7 +98,7 @@ Accept all the defaults by pressing "Enter" through all the prompts for hosting 
 
 Once completed, your project will have some new files that you can use to configure the database. For now, you can hide the "Terminal" section of Visual Studio Code and focus on the code windows.
 
-## Add Necessary Scripts ##
+## Add Necessary Scripts
 
 To actually start using the Cloud Firestore functions, we need to first add the Cloud Firestore scripts. In the code, find this section of the `index.html` file:
 
@@ -130,7 +130,7 @@ We will remove the other libraries that we're not using (but keep the `auth` lib
 
 Note: since we are hosting in Firebase, there is a reference to `/__/firebase/init.js` in the scripts that are executed. The documentation for Google Cloud Firestore will ask you to initialize the library with your access token and some other details. However, Firebase Hosting will create these automatically once you have the database created in your application's account.
 
-## Review the Complete Example ##
+## Review the Complete Example
 
 So far, we talked through the steps that you would take once you had to modify your application to add hosting. Now we'll pull the complete example and walk through the changes in the code.
 
@@ -186,7 +186,7 @@ firebase serve
 
 It will host the HTML and JavaScript locally, but the database used will be the one in Google in your Firebase account. This way, you can rapidly cycle and test changes locally, but you should be aware that you could affect the global database. In modern software development, we would create multiple applications: one for Development (developer-centric alpha testing), one for Testing (stabilization / beta testing), and one for Production (what the customers see).
 
-##  Walking through the Example ##
+## Walking through the Example
 
 The new example application does a bit more than its predecessor. It's got some issues (don't we all) but we'll work on addressing those in future segments. We'll go through the salient points of the example and talk through how some things are done, and what changes were made after trying to operationalize the data model.
 
@@ -250,8 +250,8 @@ Note: we are using the v1.1.0 version instead of the v2.0.0 version of this libr
 
 Two new styles were added:
 
-* `map-popup-block ul` : for the unordered list in the map-popup-block, make sure the bullets are aligned further left. The `padding-inline-start` directive removes the extra space to the left of the bullet points that's there by default.
-* `map-popup-block p` : for the paragraph tag that's in the map-popup-block, remove the bottom margin between the location text and the bulleted list of comments. This makes the text more compact and looks a little nicer.
+- `map-popup-block ul` : for the unordered list in the map-popup-block, make sure the bullets are aligned further left. The `padding-inline-start` directive removes the extra space to the left of the bullet points that's there by default.
+- `map-popup-block p` : for the paragraph tag that's in the map-popup-block, remove the bottom margin between the location text and the bulleted list of comments. This makes the text more compact and looks a little nicer.
 
 ## Body Layout
 
@@ -285,29 +285,29 @@ The function inside the call to `addEventListener` is called after all the scrip
 
 Before we get into the individual functions, let's quickly discuss how these functions are called in the application. This will help you get a better feel for what each function is doing. We can express these in terms of the user flows that we discussed last time.
 
-* Given that the user is not logged in
-  * When the map is first shown
-    * Then the markers in the default map area with comments will be shown.
-      * `showComments()`
-        * `removeMarkers()`
-        * `addMarkerToMap()`
-  * When the user clicks or taps on a blank location on the map
-    * Then the user is shown the location popup with no comments and is allowed to add a comment.
-      * `onMapClick()`
-        * `showPopup()`
-  * When the user clicks or taps on an existing marker on the map
-    * Then the user is shown the location popup with the existing comments, and is allowed to add a comment.
-      * `onMapClick()`
-        * `getComments()`
-        * `showPopup()`
-  * Given that the user is looking at the comment list popup for a location
-    * When the user click "Add Comment"
-      * Then the user is allowed to enter and confirm a comment to add to that location.
-        * `addComment()`
-          * `addCommentToMarker()`
-          * `addMarker()` / `addMarkerToMap()` / `addCommentToMarker()`
-          * `getComments()`
-          * `showPopup()`
+- Given that the user is not logged in
+  - When the map is first shown
+    - Then the markers in the default map area with comments will be shown.
+      - `showComments()`
+        - `removeMarkers()`
+        - `addMarkerToMap()`
+  - When the user clicks or taps on a blank location on the map
+    - Then the user is shown the location popup with no comments and is allowed to add a comment.
+      - `onMapClick()`
+        - `showPopup()`
+  - When the user clicks or taps on an existing marker on the map
+    - Then the user is shown the location popup with the existing comments, and is allowed to add a comment.
+      - `onMapClick()`
+        - `getComments()`
+        - `showPopup()`
+  - Given that the user is looking at the comment list popup for a location
+    - When the user click "Add Comment"
+      - Then the user is allowed to enter and confirm a comment to add to that location.
+        - `addComment()`
+          - `addCommentToMarker()`
+          - `addMarker()` / `addMarkerToMap()` / `addCommentToMarker()`
+          - `getComments()`
+          - `showPopup()`
 
 ### showComments()
 
@@ -318,11 +318,11 @@ We start by checking the zoom level. There's an arbitrary limit of `9` for the z
 Next, we'll get the map bounds and encode the Southwest and Northeast corners as geohashes:
 
 ```javascript
-const bounds = mymap.getBounds();
-const lower = bounds.getSouthWest();
-const upper = bounds.getNorthEast();
-const lowerHash = Geohash.encode(lower.lat, lower.lng, 9);
-const upperHash = Geohash.encode(upper.lat, upper.lng, 9);
+const bounds = mymap.getBounds()
+const lower = bounds.getSouthWest()
+const upper = bounds.getNorthEast()
+const lowerHash = Geohash.encode(lower.lat, lower.lng, 9)
+const upperHash = Geohash.encode(upper.lat, upper.lng, 9)
 ```
 
 You can read more on `getBounds()` here: [Leaflet Map getBounds()](https://leafletjs.com/reference-1.6.0.html#map-getbounds). It returns a `LatLngBounds` object that has methods for getting the various coordinates represented by the bounds. The bounds are the rectangle that the map is showing on the screen.
@@ -335,41 +335,36 @@ Next, we will see our first taste of database code:
 
 ```javascript
 // get the database helper object
-const db = firebase.firestore();
+const db = firebase.firestore()
 // find all the markers that are within our bounds
 db.collection("markers")
-	.where("geohash", ">=", lowerHash)
-	.where("geohash", "<=", upperHash)
-	.limit(100)
-	.get()
-	.then((querySnapshot) => {
-		removeMarkers();
+  .where("geohash", ">=", lowerHash)
+  .where("geohash", "<=", upperHash)
+  .limit(100)
+  .get()
+  .then(querySnapshot => {
+    removeMarkers()
 
-		querySnapshot.forEach((marker) => {
-			const data = marker.data();
-			addMarkerToMap(
-				data.latitude,
-				data.longitude,
-				"Location",
-				marker.id
-			);
-		});
-	});
+    querySnapshot.forEach(marker => {
+      const data = marker.data()
+      addMarkerToMap(data.latitude, data.longitude, "Location", marker.id)
+    })
+  })
 ```
 
 Let's pull this apart and see what is going on. First, we need to get the database helper object so we can call the Cloud Firestore functions:
 
 ```javascript
-const db = firebase.firestore();
+const db = firebase.firestore()
 ```
 
 The `firebase` object is already set globally by the Firebase initialization code. We call the `firestore()` function to get the database functions. For convenience and to keep conventions, we'll assign that to a variable `db` everywhere we need it. This will signal that any call that starts with `db.` is related to a database call. You can read more about the functions that the `db` instance contains here: [Firestore documentation](https://firebase.google.com/docs/reference/js/firebase.firestore.Firestore).
 
 Next, we have the actual database query. This will make a call to the Cloud Firestore database and return the information requested. Keep in mind that the data is organized into collections and documents. The "markers" collection contains the map markers. And each marker has these properties:
 
-* `latitude`
-* `longitude`
-* `geohash`
+- `latitude`
+- `longitude`
+- `geohash`
 
 When we make a query, we need to establish the base context for the query first. Think of it as telling the database where to start looking. In our case, we want to start looking in the collection of "markers" to find a set of markers that fit our criteria (in this case, that fit within the bounding box).
 
@@ -381,10 +376,10 @@ This line will get a Cloud Firestore [CollectionReference](https://firebase.goog
 
 ```javascript
 db.collections("markers")
-    .where("geohash", ">=", lowerHash)
-    .where("geohash", "<=", upperHash)
-    .limit(100)
-    .get()
+  .where("geohash", ">=", lowerHash)
+  .where("geohash", "<=", upperHash)
+  .limit(100)
+  .get()
 ```
 
 The `where()` function calls allow us to provide extra criteria on the markers to narrow the search. In this case, we want to find the markers that are greater than or equal to the lower hash (the southwest corner) and less than or equal to the upper hash (the northeast corner).
@@ -428,31 +423,35 @@ In a web API request (like when we search the Nominatum service for the map loca
 ```javascript
 // 1. start the remote request
 fetch(url)
-// 2. resolve the promise when responded
-	.then(response =>
-// 3. start to convert the response
-          response.json())
-// 4. resolve the promise when converted
-	.then(data =>
-// 5. do something with the response object
-          doSomething(data));
+  // 2. resolve the promise when responded
+  .then(response =>
+    // 3. start to convert the response
+    response.json()
+  )
+  // 4. resolve the promise when converted
+  .then(data =>
+    // 5. do something with the response object
+    doSomething(data)
+  )
 ```
 
 For the database call, the pattern is similar:
 
 ```javascript
 // 1. start the remote request
-db.collection("markers").where(/* ... */).get()
-// 2. resolve the promise when responded
-	.then(querySnapshot => {
-		querySnapshot.forEach(marker => {
-// 3. start to convert the response
-            const data = marker.data();
-// 4. (skipped)
-// 5. do something with the response object
-            doSomething(data);
-        })
-	})
+db.collection("markers")
+  .where(/* ... */)
+  .get()
+  // 2. resolve the promise when responded
+  .then(querySnapshot => {
+    querySnapshot.forEach(marker => {
+      // 3. start to convert the response
+      const data = marker.data()
+      // 4. (skipped)
+      // 5. do something with the response object
+      doSomething(data)
+    })
+  })
 ```
 
 The only difference is that converting the data, while not a Promise operation, is still an explicit function call to avoid converting data unnecessarily.
@@ -463,38 +462,35 @@ This function is called whenever an empty area on the map is clicked. The purpos
 
 ```javascript
 function onMapClick(e) {
-	// the MouseEvent e contains a location of where it was clicked
-	const location = e.latlng;
-	// if the event has a "title", then it's a marker
-	// we can use this chaining to ensure that the target is there and
-	//  has an options and the options has a title. Otherwise, use "Location"
-	const title =
-		(e.target && e.target.options && e.target.options.title)
-    	|| "Location";
-	const markerId = e.target
-    	&& e.target.options
-    	&& e.target.options.markerId;
+  // the MouseEvent e contains a location of where it was clicked
+  const location = e.latlng
+  // if the event has a "title", then it's a marker
+  // we can use this chaining to ensure that the target is there and
+  //  has an options and the options has a title. Otherwise, use "Location"
+  const title =
+    (e.target && e.target.options && e.target.options.title) || "Location"
+  const markerId = e.target && e.target.options && e.target.options.markerId
 
-	// if a marker was passed, fetch the comments for
-    //  that marker and show the data
-	if (markerId) {
-		getComments(markerId).then((comments) =>
-			showPopup(location, title, comments, markerId)
-		);
-	} else {
-		// since no marker ID was passed, assume it's
-        //  a new location and don't check the database
-		showPopup(location, title);
-	}
+  // if a marker was passed, fetch the comments for
+  //  that marker and show the data
+  if (markerId) {
+    getComments(markerId).then(comments =>
+      showPopup(location, title, comments, markerId)
+    )
+  } else {
+    // since no marker ID was passed, assume it's
+    //  a new location and don't check the database
+    showPopup(location, title)
+  }
 }
 ```
 
 The first part of this function performs some normalization of the input data. In JavaScript, you can use the logical `&&` and `||` operators to do interesting things when the left side operand is `undefined` or "false-y" in JavaScript terms.
 
-* `left && right` : if the `left` is `undefined`, return `undefined`, otherwise, return `right`
-  * This is useful when you want to perform some action on `left` using the expression on `right`. In our case, we want to see if the `e.target.options` is an accessible property.
-* `left || right` : if the `left` is NOT `undefined`, return `left`, otherwise, return `right`
-  * This is useful when you want to use the value of `left` unless it isn't defined. In our case, if we tried to resolve the `e.target.options.title` from the `MouseEvent` but it ended up not being available, then we want to use the constant string `"Location"` instead.
+- `left && right` : if the `left` is `undefined`, return `undefined`, otherwise, return `right`
+  - This is useful when you want to perform some action on `left` using the expression on `right`. In our case, we want to see if the `e.target.options` is an accessible property.
+- `left || right` : if the `left` is NOT `undefined`, return `left`, otherwise, return `right`
+  - This is useful when you want to use the value of `left` unless it isn't defined. In our case, if we tried to resolve the `e.target.options.title` from the `MouseEvent` but it ended up not being available, then we want to use the constant string `"Location"` instead.
 
 In the second half of the function, we check for a valid `markerId`. If one exists, then that means that this click was on a marker that was created from a marker in the database, and that we should make sure that any comments added are created on that marker specifically. Also, since it is an existing marker, we need to make sure to pull the comments for that marker from the database. If no marker was passed, it is a new marker and we don't need to check for any comments (there won't be any) and can just show it as a new marker with no comments.
 
@@ -504,27 +500,27 @@ This function will fetch a single marker using its identifier, and the top 5 mos
 
 ```javascript
 function getComments(id) {
-    // find all the comments for this marker
-    const db = firebase.firestore();
+  // find all the comments for this marker
+  const db = firebase.firestore()
 
-    return db
-        .collection("markers")
-        .doc(id)
-        .collection("comments")
-        .orderBy("timestamp", "desc")
-        .limit(5)
-        .get()
-        .then((snapshot) => {
-        const comments = [];
-        snapshot.forEach((doc) => {
-            comments.push({
-                message: doc.data().message,
-                timestamp: doc.data().timestamp,
-            });
-        });
+  return db
+    .collection("markers")
+    .doc(id)
+    .collection("comments")
+    .orderBy("timestamp", "desc")
+    .limit(5)
+    .get()
+    .then(snapshot => {
+      const comments = []
+      snapshot.forEach(doc => {
+        comments.push({
+          message: doc.data().message,
+          timestamp: doc.data().timestamp,
+        })
+      })
 
-        return comments;
-    });
+      return comments
+    })
 }
 ```
 
@@ -533,10 +529,10 @@ What's interesting here is that we see the structure of the database:
 ```javascript
 // start with the "markers" collection
 db.collection("markers")
-// find a specific marker by id
-	.doc(id)
-// access all its comments
-	.collection("comments")
+  // find a specific marker by id
+  .doc(id)
+  // access all its comments
+  .collection("comments")
 ```
 
 Cloud Firestore structures data in this way: collection => document => collection => document
@@ -575,9 +571,9 @@ We do a "funny" thing at the end, we return a value from the `then()` callback. 
 If you look back at the `onMapClick()` function, you'll see how we end up calling `getComments()`:
 
 ```javascript
-getComments(markerId)
-    .then((comments) =>
-          showPopup(location, title, comments, markerId));
+getComments(markerId).then(comments =>
+  showPopup(location, title, comments, markerId)
+)
 ```
 
 After the comments are loaded from the database and extracted, they'll be passed to the `showPopup()` function to display.
@@ -588,38 +584,40 @@ This function will show the popup on the map with the current list of comments a
 
 ```jsx
 function showPopup(location, title, comments, markerId) {
-    comments = comments || [];
-    comments = comments.map((c) => `<li>${cleanText(c.message)}</li>`);
+  comments = comments || []
+  comments = comments.map(c => `<li>${cleanText(c.message)}</li>`)
 
-    // Create a new popup with a dynamically generated HTML component
-    //  the `` string can stretch multiple lines of code and can be
-    //  used with the ${} for substitutions
-    L.popup()
-        .setContent(
-        `
+  // Create a new popup with a dynamically generated HTML component
+  //  the `` string can stretch multiple lines of code and can be
+  //  used with the ${} for substitutions
+  L.popup()
+    .setContent(
+      `
         <div style="width:200px; height: 200px;">
             <div class="map-popup-block">
                 <p>${title}</p>
                 <ul>
                 	${comments.join("\n")}
                 </ul>
-                <button onClick="addComment(${location.lat}, ${location.lng} ${markerId ? `, '${markerId}'` : "" })">
+                <button onClick="addComment(${location.lat}, ${location.lng} ${
+        markerId ? `, '${markerId}'` : ""
+      })">
                 Add Comment
                 </button>
             </div>
         </div>
         `
-	    )
-        .setLatLng(location)
-        .openOn(mymap);
+    )
+    .setLatLng(location)
+    .openOn(mymap)
 }
 ```
 
 There's a few interesting patterns to unpack here, we'll start with the comment mapping.
 
 ```javascript
-comments = comments || [];
-comments = comments.map((c) => `<li>${cleanText(c.message)}</li>`);
+comments = comments || []
+comments = comments.map(c => `<li>${cleanText(c.message)}</li>`)
 ```
 
 The first line is just defensive code, if you pass an `undefined` comments list (which will happen when you don't pass one at all, which will happen when you click on an empty map location with no markers).
@@ -630,39 +628,42 @@ Let's look at the popup generation code (without the template) first:
 
 ```javascript
 L.popup()
-    .setContent("(content goes here)")
-    .setLatLng(location)
-    .openOn(mymap);
+  .setContent("(content goes here)")
+  .setLatLng(location)
+  .openOn(mymap)
 ```
 
 We've seen this code in the original version of the code, it will create a popup at a particular location on the map that the user can interact with. However, the string in the `setContent()` function can be full HTML content that will be rendered in the browser. This is both super powerful but also a little dangerous. The danger comes from the fact that the comments are user-entered strings, and we want to render them directly into a component that outputs HTML. This means that if a malicious user entered some HTML tags or `<script>` tags, they would execute in the user context. We use the `cleanText()` function to resolve this:
 
 ```javascript
 function cleanText(text) {
-    return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
 }
 ```
 
 This will find the offensive `&`, `<`, and `>` characters in the user-entered text and replace them with the HTML entities equivalent that will make sure they don't have any undesirable effects. In modern software application, you must always be careful about how you render user-entered text. All users are terrible people who will try and enter mean things into your application to see what happens. Case in point:
 
-![XKCD: Exploits of a Mom](exploits_of_a_mom.png)
+![xkcd: Exploits of a Mom](exploits_of_a_mom.png)
+[xkcd: Exploits of a Mom](https://xkcd.com/327/)
 
 This is a REAL problem (yes, it is). So, always sanitize your inputs, you've been warned.
 
 Coming back to the template text:
 
 ```javascript
-`
+;`
 <div style="width:200px; height: 200px;">
     <div class="map-popup-block">
         <p>${title}</p>
         <ul>
         	${comments.join("\n")}
         </ul>
-        <button onClick="addComment(${location.lat}, ${location.lng} ${markerId ? `, '${markerId}'` : "" })">
+        <button onClick="addComment(${location.lat}, ${location.lng} ${
+  markerId ? `, '${markerId}'` : ""
+})">
         	Add Comment
         </button>
     </div>
@@ -682,59 +683,57 @@ This function will prompt the user for a comment and add it to the requested mar
 
 ```javascript
 function addComment(latitude, longitude, id) {
-    const comment = prompt(
-        "What do you want to tell people about this place?"
-    );
-    if (!comment) return;
+  const comment = prompt("What do you want to tell people about this place?")
+  if (!comment) return
 
-    // get the database helper object
-    const db = firebase.firestore();
+  // get the database helper object
+  const db = firebase.firestore()
 
-    // this uses the "ternary operator" or ? : to execute
-    //  one path or the other.
-    //  it's useful to reduce the need for a separate if / else block
-    const operation = id
-    	// if the ID is valid, just add a comment to the marker
-    	? addCommentToMarker(id, comment)
-	    // if the ID was not valid, create a new marker, then add a comment
-    	: addMarker(latitude, longitude)
-    		.then((newMarker) => {
-        		// since we added a new marker, make sure
-                //  it shows up on the map
-        		addMarkerToMap(latitude, longitude, "Location", newMarker.id);
-        		return addCommentToMarker(newMarker.id, comment)
-    		});
+  // this uses the "ternary operator" or ? : to execute
+  //  one path or the other.
+  //  it's useful to reduce the need for a separate if / else block
+  const operation = id
+    ? // if the ID is valid, just add a comment to the marker
+      addCommentToMarker(id, comment)
+    : // if the ID was not valid, create a new marker, then add a comment
+      addMarker(latitude, longitude).then(newMarker => {
+        // since we added a new marker, make sure
+        //  it shows up on the map
+        addMarkerToMap(latitude, longitude, "Location", newMarker.id)
+        return addCommentToMarker(newMarker.id, comment)
+      })
 
-    // we don't have to chain the promise immediately,
-    //  we can wait and do it later (like here)
-    operation.then((newComment) => {
-        // comment parent is collection of comments,
-        //  then its parent is the marker
-        const markerId = newComment.parent.parent.id;
+  // we don't have to chain the promise immediately,
+  //  we can wait and do it later (like here)
+  operation.then(newComment => {
+    // comment parent is collection of comments,
+    //  then its parent is the marker
+    const markerId = newComment.parent.parent.id
 
-        getComments(markerId)
-            .then((comments) => showPopup(
-	            // make an object that smells like a Leaflet LatLng
-            	{ lat: latitude, lng: longitude }, 
-            	"Location",
-                comments,
-                markerId
-	        ));
-    });
+    getComments(markerId).then(comments =>
+      showPopup(
+        // make an object that smells like a Leaflet LatLng
+        { lat: latitude, lng: longitude },
+        "Location",
+        comments,
+        markerId
+      )
+    )
+  })
 }
 ```
 
 This is a longer function, so let's break it down and see what's going on. First, we decide whether we need to just add a comment to an existing marker or first add a new marker, then add a comment to it. These situations are handled differently:
 
-* If a new marker needs to be created, then we need to: (1) add the marker to the database, (2) add the comment to the new marker, and (3) add the marker to the map so that it shows up with a marker icon.
-* If a new marker doesn't need to be created, then we just add a comment to the existing marker in the database.
+- If a new marker needs to be created, then we need to: (1) add the marker to the database, (2) add the comment to the new marker, and (3) add the marker to the map so that it shows up with a marker icon.
+- If a new marker doesn't need to be created, then we just add a comment to the existing marker in the database.
 
 In both cases, we proceed to the second half of the function, which is to get the updated list of comments from the database and display a new popup with the new comment list.
 
 The only new thing in this function is this strange notation:
 
 ```javascript
-const markerId = newComment.parent.parent.id;
+const markerId = newComment.parent.parent.id
 ```
 
 In this code snippet, `newComment` is the [Cloud Firestore DocumentReference](https://firebase.google.com/docs/reference/js/firebase.firestore.DocumentReference) that is returned from the `addCommentToMarker()` function. This object has a `parent` property that can be used to navigate up the object chain. Remember that a comment has this hierarchy:
@@ -755,14 +754,14 @@ This function adds a marker to the database.
 
 ```javascript
 function addMarker(latitude, longitude) {
-    // get the database helper object
-    const db = firebase.firestore();
+  // get the database helper object
+  const db = firebase.firestore()
 
-    return db.collection("markers").add({
-        latitude,
-        longitude,
-        geohash: Geohash.encode(latitude, longitude, 9),
-    });
+  return db.collection("markers").add({
+    latitude,
+    longitude,
+    geohash: Geohash.encode(latitude, longitude, 9),
+  })
 }
 ```
 
@@ -774,16 +773,17 @@ This function adds a comment to an existing marker in the database.
 
 ```javascript
 function addCommentToMarker(id, comment) {
-    // get the database helper object
-    const db = firebase.firestore();
+  // get the database helper object
+  const db = firebase.firestore()
 
-    return db.collection("markers")
-        .doc(id)
-        .collection("comments")
-        .add({
-            message: comment,
-            timestamp: new Date(),
-    	});
+  return db
+    .collection("markers")
+    .doc(id)
+    .collection("comments")
+    .add({
+      message: comment,
+      timestamp: new Date(),
+    })
 }
 ```
 
@@ -805,13 +805,12 @@ The collections are labeled, and you can edit the data as well in the browser, t
 
 And that's it! What's still missing? Well, we need to authenticate users and setup the three different role levels: Readers, Writers, Superusers, then we need to add "Edit" and "Delete" functionality.
 
-# Today I Learned
+## Today I Learned
 
 Manipulating the database in Cloud Firestore is fairly simple, we don't need to do a lot of ceremony or setup, and once we start adding data, the structures in the database are created automatically. The online console makes it easy to see if we're using it properly and to make tweaks to the data during the development process.
 
-Now that we've been adding a lot more functions to the code, the `index.html` file is starting to get a bit unwieldy. It would be good to start to split some of this functionality apart so we can  organize our application into logical parts better.
+Now that we've been adding a lot more functions to the code, the `index.html` file is starting to get a bit unwieldy. It would be good to start to split some of this functionality apart so we can organize our application into logical parts better.
 
 This version added some more structured documentation using the [JSDoc](https://jsdoc.app/) format. This format allows Visual Studio Code to give some more hints as you use the code to remember what values to pass to the functions and what sort of objects they return. As you mess around with the code, you'll find you get more hints that you did with the previous sample.
 
 When developing real-world JavaScript applications, there are a LOT more things to consider like input validation, remote calls, and security that don't always show up in the classroom environment. Modern software projects tend to use bigger, more complex frameworks that increase the amount of code in the system you don't see, but also can simplify the common things that you do with code and help you organize your application better. There is a delicate balance between the complexity of the runtime application and the ease of adding new features at development time.
-
