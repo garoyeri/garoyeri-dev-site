@@ -13,7 +13,7 @@ In the last segment, we implemented a simple map user interface we could use to 
 
 If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](sample-javascript-application-introduction).
 
-These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Frontend Part 1](sample-javascript-application-frontend-2). If you don't have that handy, you'll need to follow the instructions in the previous article to get a project configured that points to your own Firebase project on Google Cloud.
+These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Frontend Part 1](sample-javascript-application-frontend-1). If you don't have that handy, you'll need to follow the instructions in the previous article to get a project configured that points to your own Firebase project on Google Cloud.
 
 ## What is the Google Cloud Firestore Database? ##
 
