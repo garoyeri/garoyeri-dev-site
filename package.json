@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "ci": "yarn workspace garoyeri-dev-site ci",
     "build": "yarn workspace garoyeri-dev-site build",
     "serve": "yarn workspace garoyeri-dev-site serve",
     "develop": "yarn workspace garoyeri-dev-site develop",
