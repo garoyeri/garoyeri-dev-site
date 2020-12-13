@@ -2,10 +2,14 @@
 title: ASP.NET Core running in your AWS Lambda
 type: post
 date: 2020-12-13
-tags: ["dotnetcore", "aws", "lambda" ]
+tags: ["dotnetcore", "aws", "lambda", "csharp", "csadvent" ]
 excerpt: |
   ASP.NET Core applications can be run serverless in AWS Lambda as-is and still be run locally or in a container.
 ---
+
+## C# Advent 2020
+
+This article is part of the [C# Advent 2020](https://www.csadvent.christmas/), if you're interested in more articles about C# from some great authors, please go check it out! The previous year advents are also available and some alternatives too.
 
 ## Introduction
 
