@@ -1,10 +1,8 @@
 ---
 title: Sample JavaScript Application Part 3 - The Database
-type: post
 date: 2020-05-04
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]
-excerpt: |
-  In the last segment, we discussed how we should do data modeling and arrived at a possible data model to use with the database. This segment, we'll walk through how to setup the database and connect your frontend to it to start saving data about the map.
+authors: [garo]
 ---
 
 ## Overview

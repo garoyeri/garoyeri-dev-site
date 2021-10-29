@@ -1,10 +1,8 @@
 ---
 title: Sample JavaScript Application Part 1 - Frontend
-type: post
 date: 2020-04-15
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]
-excerpt: |
-  In the last segment, we setup an initial empty Firebase application and got environment working. Now we'll add a new frontend to the application to show a simple map view and let us search for our current location and other useful things. These instructions will walk through updating the frontend to add a free map control and have it do some searching for us.
+authors: [garo]
 ---
 
 ## Overview ##

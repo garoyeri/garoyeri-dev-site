@@ -1,10 +1,8 @@
 ---
 title: Gatsby Theme for Developer Documentation Generation
-type: post
 date: 2020-05-21
 tags: ["gatsby", "gatsby-theme", "development" ]
-excerpt: |
-  Introducing a Gatsby theme with a bunch of plugins ready for you to quickly generate useful standalone documentation for your API or other software project.
+authors: [garo]
 ---
 
 ## Gatsby JS and MDX

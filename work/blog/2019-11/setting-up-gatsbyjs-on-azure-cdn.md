@@ -1,10 +1,8 @@
 ---
 title: Gatsby JS on Azure CDN
-type: post
 date: 2019-11-02
 tags: ["gatsbyjs", "azure"]
-excerpt: |
-    I've been super excited lately about building JAM stack sites using [GatsbyJS](https://gatsbyjs.org), and I recently setup a way for our church website to be updated from Facebook, Office 365 calendar, and static content automatically, hosting them on Azure simply.
+authors: [garo]
 ---
 
 I've been super excited lately about building JAM stack sites using [GatsbyJS](https://gatsbyjs.org), and I recently setup a way for our church website to be updated from Facebook, Office 365 calendar, and static content automatically, hosting them on Azure simply.

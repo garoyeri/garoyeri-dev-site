@@ -1,10 +1,8 @@
 ---
 title: Sample JavaScript Application Part 4 - Authentication and Security
-type: post
 date: 2020-05-13
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]
-excerpt: |
-  In the last segment, we setup a database and reviewed all the code that interacts with it. This time, we'll setup authentication so we can lock down the security of the system and the database, and add a few user-centric capabilities like editing and deleting comments.
+authors: [garo]
 ---
 
 ## Overview

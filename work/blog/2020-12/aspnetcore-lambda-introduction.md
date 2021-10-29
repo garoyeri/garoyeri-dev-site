@@ -3,6 +3,7 @@ title: ASP.NET Core running in your AWS Lambda
 type: post
 date: 2020-12-13
 tags: ["dotnetcore", "aws", "lambda", "csharp", "csadvent" ]
+authors: [garo]
 ---
 
 ## C# Advent 2020

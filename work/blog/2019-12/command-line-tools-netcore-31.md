@@ -1,10 +1,8 @@
 ---
 title: Vertically Sliced Command Line Tools in C# and .NET Core 3.1
-type: post
 date: 2019-12-18
 tags: ["csharp", "csadvent", "commandline", "vertical-slice"]
-excerpt: |
-  When I first started using .NET Core, all the examples online for applications were for web applications using ASP.NET Core. However, I wanted to start simpler and build a simple command line tool. This required a LOT of trial and error in manually setting up configuration, logging, dependency injection, and tearing everything down appropriately so that all the logging output would properly get flushed. I kept that example around ... somewhere ... and had to refer my coworkers to it a few times over the year. Now with .NET Core 3.1 and the new Generic Host, we can get a simple (but fully featured) command line application built up following Vertical Slice Architecture.
+authors: [garo]
 ---
 
 When I first started using .NET Core, all the examples online for applications were for web applications using ASP.NET Core. However, I wanted to start simpler and build a simple command line tool. This required a LOT of trial and error in manually setting up configuration, logging, dependency injection, and tearing everything down appropriately so that all the logging output would properly get flushed. I kept that example around ... somewhere ... and had to refer my coworkers to it a few times over the year. Now with .NET Core 3.1 and the new [Generic Host](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1), we can get a simple (but fully featured) command line application built up following Vertical Slice Architecture.

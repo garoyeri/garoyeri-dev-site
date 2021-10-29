@@ -1,10 +1,8 @@
 ---
 title: Sample JavaScript Application Introduction
-type: post
 date: 2020-04-12
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]
-excerpt: |
-  This series of posts describes how you can build up a simple web application hosted on Google Cloud to allow users to store extra information about locations on a map. It's meant for people who are just getting into JavaScript and have at least basic knowledge of how it works. When there's a more advanced concept, I'll try to explain it a bit more fully. The goal is to have a simple application that you can build and host that you can think of as a "real" application.
+authors: [garo]
 ---
 
 ## Overview ##

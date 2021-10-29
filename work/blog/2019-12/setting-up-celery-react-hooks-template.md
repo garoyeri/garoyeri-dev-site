@@ -1,12 +1,8 @@
 ---
 title: Upgrading the .NET Core 3.0 React SPA Template Frontend to Celery Architecture with Hooks
-type: post
 date: 2019-12-06
 tags: ["gatsbyjs", "react", "series-directory"]
-excerpt: |
-  In the previous post, we refactored the backend of the template application into a "Celery" (or "Vertical Slice") architecture with feature folders. For the frontend single-page application (SPA), we'll refactor in a few simple ways: upgrade the dependencies, reorganize the file structure, and introduce React Hooks.
-
-  This post assumes you are familiar with the basics of React and can follow along. If this isn't the case, you should run through some of the tutorial materials first. The ones on the React site are a great starting point to get you moving, and you can probably follow along by reading my code in GitHub as well.
+authors: [garo]
 ---
 
 Previous Post in Series: [Upgrading the .NET Core 3.0 React SPA Template to Celery Architecture](/2019-11/setting-up-celery-net-core-3-csharp)

@@ -1,10 +1,8 @@
 ---
 title: Sample JavaScript Application Part 2 - Data Modeling
-type: post
 date: 2020-04-19
 tags: ["javascript", "firebase", "google", "series-samplejavascript"]
-excerpt: |
-  In the last segment, we implemented a simple map user interface we could use to find certain areas on the map and show markers for them. This time, we'll look at connecting a database to the backend, allowing us to click on the map to add comments to a latitude / longitude coordinate on the map, then allow others to see all the data that's been added to the map. We won't implement login yet, but leave it open for now.
+authors: [garo]
 ---
 
 ## Overview ##
