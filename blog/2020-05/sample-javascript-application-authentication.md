@@ -9,9 +9,9 @@ authors: [garo]
 
 In the last segment, we setup a database and reviewed all the code that interacts with it. This time, we'll setup authentication so we can lock down the security of the system and the database, and add a few user-centric capabilities like editing and deleting comments.
 
-If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](/2020-04/sample-javascript-application-introduction).
+If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](../2020-04/sample-javascript-application-introduction).
 
-These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Part 3 - The Database](/2020-04/sample-javascript-application-database). If you don't have that handy, you'll need to follow the instructions in the previous articles to get a project configured that points to your own Firebase project on Google Cloud.
+These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Part 3 - The Database](../2020-04/sample-javascript-application-database). If you don't have that handy, you'll need to follow the instructions in the previous articles to get a project configured that points to your own Firebase project on Google Cloud.
 
 <!--truncate-->
 

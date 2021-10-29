@@ -10,7 +10,7 @@ const config = {
   tagline: 'Garo Yeriazarian, Software Whisperer',
   url: 'https://garoyeri.dev',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'garoyeri', // Usually your GitHub org/user name.
