@@ -1,6 +1,0 @@
-[[plugins]]
-package = "netlify-plugin-gatsby-cache"
-
-[build]
-  publish = "garoyeri-dev-site/public"
-  command = "yarn ci"
