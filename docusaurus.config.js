@@ -26,6 +26,7 @@ const config = {
           showReadingTime: true,
           routeBasePath: '/',
           path: './blog',
+          blogSidebarCount: 15,
           // Please change this to your repo.
           editUrl:
             'https://github.com/garoyeri/garoyeri-dev-site/edit/main/website/blog/',
