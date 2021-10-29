@@ -41,10 +41,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'garoyeri.dev',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'GaroYeri Logo',
+          src: 'img/avatar.png',
         },
         items: [
           {to: '/', label: 'Blog', position: 'left'},
