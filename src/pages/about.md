@@ -3,7 +3,7 @@ title: About Me
 slug: about
 ---
 
-Hi. I'm Garo, and I'm a Software Whisperer who finds better ways to solve software problems with people and people problems with software. What? You've never heard of a Software Whisperer? You must not be listening hard enough. Ironically, I don't talk very softly and my whispers can be heard clear down the hallways and through thin cubicle walls. I like to solve technical problems and make insanely great software solutions for our clients with [Headspring](https://headspring.com/), and I also like to work with people and understand how to make them insanely great as well.
+Hi. I'm Garo, and I'm a Software Whisperer who finds better ways to solve software problems with people and people problems with software. What? You've never heard of a Software Whisperer? You must not be listening hard enough. Ironically, I don't talk very softly and my whispers can be heard clear down the hallways and through thin cubicle walls. I like to solve technical problems and make insanely great software solutions for our clients with [Headspring, part of Accenture](https://headspring.com/), and I also like to work with people and understand how to make them insanely great as well.
 
 ### The Technician
 
@@ -41,6 +41,10 @@ Funny story, apparently Headspring had tried to recruit me a lot of times over t
 
 I like to quote Basher from Ocean's Eleven: "It will be nice working with proper villains again!" I'm working with some of the brightest people in the business (they pay me to say that, but I'll say it for free). I learn new things every day from people and from projects. Now I have the time, opportunity, and support to do more writing, more speaking, and generally more interaction with the greater software community. Watch this space (the main page anyway) for whatever else I think of.
 
+### The Accenturion PPESian
+
+Another "funny story", Headspring was acquired by Accenture back in December 2021 and suddenly my world got a LOT bigger. To say that [Accenture](https://www.accenture.com) is a big company is an understatement. It's mind-bogglingly huge and the projects are way bigger than anything I had worked on before. Our new group is called "Product and Platform Engineering Services" or P&PES (or PPES depending on who you ask). We do what Headspring did, only on a much larger scale. It's just getting started but I'm learning every day and am looking forward to seeing what happens next. Spoiler: it'll be a "big deal." Fear not though, I'm still whispering and helping people, just trying to find my focus in this now much larger playing field.
+
 Until next time: work hard, be kind.
 
--Garo
+❤️Garo
