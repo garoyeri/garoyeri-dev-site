@@ -14,6 +14,8 @@ The story goes like this: a developer is working in a cloud environment and some
 
 In my talk last year about getting the cloud in your head, I introduced the idea of "mental models" that built on [Bloom's Taxonomy](https://bloomstaxonomy.net/) (a framework for learning used by teachers for almost 70 years: published in 1956). The simpler, revised taxonomy was published in 2001 and is what I referenced in that presentation and this one. To learn something new, you must first "remember": recall facts and basic concepts using vocabulary, and then "understand": explain ideas or concepts in your own words.
 
+Slides are here: [Garo Yeriazarian: Getting Cloud Networking into your Head](getting-cloud-networking-into-your-head.assets/Garo%20Yeriazarian%20-%20Getting%20Cloud%20Networking%20into%20your%20Head.pdf).
+
 ## Networking Mental Model
 
 Developers need to learn the foundations of cloud networking: Virtual Networks, Virtual Private Cloud, Subnets, Routes, Firewalls and so on for their environment. A typical cloud network environment may look like this:
