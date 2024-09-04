@@ -36,9 +36,9 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.4.0",
-    "@docusaurus/types": "^3.4.0",
-    "yarn-audit-fix": "^10.0.7"
+    "@docusaurus/module-type-aliases": "^3.5.2",
+    "@docusaurus/types": "^3.5.2",
+    "yarn-audit-fix": "^10.0.9"
   },
   "engines": {
     "node": ">=18.0"
