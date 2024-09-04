@@ -10,6 +10,8 @@ authors: [garo]
 
 I recently gave an "Ignite" talk at [DevOpsDays Austin 2023](https://devopsdays.org/events/2023-austin/welcome/) (in Austin) about a mental model for the cloud to build a foundation of knowledge for you to better understand cloud technology as a whole. An "Ignite" talk is a 5 minute talk where you present 20 slides, each advancing at 15 seconds, without stopping until the end. The challenge is to distill your message such that it can be presented in 5 minutes. It's a fun, but challenging, format that really makes you edit, edit, and edit some more.
 
+<!-- truncate -->
+
 If you haven't heard of DevOpsDays, it's a well-organized conference (I've been to Houston and Austin now). You will likely fine one near you!
 
 ## Kansas City Developers Conference
