@@ -15,12 +15,19 @@ updates:
     schedule:
       interval: weekly
     groups:
+      docusaurus:
+        patterns:
+          - "@docusaurus*"
       npm-development:
         dependency-type: development
         update-types:
           - minor
           - patch
+        exclude-patterns:
+          - "@docusaurus*"
       npm-production:
         dependency-type: production
         update-types:
           - patch
+        exclude-patterns:
+          - "@docusaurus*"
