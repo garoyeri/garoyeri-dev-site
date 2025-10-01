@@ -12,10 +12,21 @@ const config = {
   url: 'https://garoyeri.dev',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    }
+  },
   favicon: 'img/favicon.ico',
   organizationName: 'garoyeri', // Usually your GitHub org/user name.
   projectName: 'garoyeri-dev-site', // Usually your repo name.
+
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    experimental_faster: true,
+  },
 
   presets: [
     [
