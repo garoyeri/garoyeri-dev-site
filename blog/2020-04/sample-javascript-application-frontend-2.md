@@ -9,9 +9,9 @@ authors: [garo]
 
 In the last segment, we implemented a simple map user interface we could use to find certain areas on the map and show markers for them. This time, we'll look at connecting a database to the backend, allowing us to click on the map to add comments to a latitude / longitude coordinate on the map, then allow others to see all the data that's been added to the map. We won't implement login yet, but leave it open for now.
 
-If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](sample-javascript-application-introduction).
+If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](/2020-04/sample-javascript-application-introduction).
 
-These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Frontend Part 1](sample-javascript-application-frontend-1). If you don't have that handy, you'll need to follow the instructions in the previous article to get a project configured that points to your own Firebase project on Google Cloud.
+These instructions assume you're starting from the application we setup in the previous article: [Sample JavaScript Application Frontend Part 1](/2020-04/sample-javascript-application-frontend-1). If you don't have that handy, you'll need to follow the instructions in the previous article to get a project configured that points to your own Firebase project on Google Cloud.
 
 <!--truncate-->
 

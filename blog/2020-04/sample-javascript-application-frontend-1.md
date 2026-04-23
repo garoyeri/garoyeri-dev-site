@@ -9,7 +9,7 @@ authors: [garo]
 
 In the last segment, we setup an initial empty Firebase application and got environment working. Now we'll add a new frontend to the application to show a simple map view and let us search for our current location and other useful things.
 
-If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](sample-javascript-application-introduction).
+If you're just seeing this, you should start with the first article in the series instead: [Sample JavaScript Application Introduction](/2020-04/sample-javascript-application-introduction).
 
 These instructions will walk through updating the frontend to add a free map control and have it do some searching for us.
 
