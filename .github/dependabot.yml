@@ -31,6 +31,13 @@ updates:
           - patch
         exclude-patterns:
           - "@docusaurus*"
+      npm-development-major-version-updates:
+        applies-to: version-updates
+        dependency-type: development
+        update-types:
+          - major
+        exclude-patterns:
+          - "@docusaurus*"
       npm-production-version-updates:
         applies-to: version-updates
         dependency-type: production
