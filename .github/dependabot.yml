@@ -19,10 +19,25 @@ updates:
     schedule:
       interval: weekly
     groups:
-      npm-version-updates:
+      docusaurus-version-updates:
         applies-to: version-updates
         patterns:
-          - "*"
+          - "@docusaurus*"
+      npm-development-version-updates:
+        applies-to: version-updates
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+        exclude-patterns:
+          - "@docusaurus*"
+      npm-production-version-updates:
+        applies-to: version-updates
+        dependency-type: production
+        update-types:
+          - patch
+        exclude-patterns:
+          - "@docusaurus*"
       npm-security-updates:
         applies-to: security-updates
         patterns:
