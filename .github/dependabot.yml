@@ -5,29 +5,55 @@ updates:
     schedule:
       interval: weekly
     groups:
-      actions-minor:
-        update-types:
-          - minor
-          - patch
+      actions-version-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      actions-security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
 
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
     groups:
-      docusaurus:
+      docusaurus-version-updates:
+        applies-to: version-updates
         patterns:
           - "@docusaurus*"
-      npm-development:
+      npm-development-version-updates:
+        applies-to: version-updates
         dependency-type: development
         update-types:
           - minor
           - patch
         exclude-patterns:
           - "@docusaurus*"
-      npm-production:
+      npm-development-major-version-updates:
+        applies-to: version-updates
+        dependency-type: development
+        update-types:
+          - major
+        exclude-patterns:
+          - "@docusaurus*"
+      npm-production-version-updates:
+        applies-to: version-updates
         dependency-type: production
         update-types:
+          - minor
           - patch
         exclude-patterns:
           - "@docusaurus*"
+      npm-production-major-version-updates:
+        applies-to: version-updates
+        dependency-type: production
+        update-types:
+          - major
+        exclude-patterns:
+          - "@docusaurus*"
+      npm-security-updates:
+        applies-to: security-updates
+        patterns:
+          - "*"
